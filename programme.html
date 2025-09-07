@@ -3,426 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LECTHA DOUTCHA - 2ème Édition</title>
+    <title>Letchadoutcha - 2ème Édition 2025</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
             overflow-x: hidden;
         }
 
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
-                        url('images/eau.jpg') center/cover;
+        .accueil {
             height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            width: 100%;
             position: relative;
-        }
-
-        .hero-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             color: white;
-            z-index: 2;
-            animation: fadeInUp 1s ease-out;
+            text-align: center;
         }
 
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            letter-spacing: 3px;
+        .background-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
 
-        .hero .edition {
-            font-size: 1.5rem;
-            color: #FFD700;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
 
-        .container {
+        .slide.active {
+            opacity: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 0 20px;
         }
 
-        .program-section {
-            background: white;
-            min-height: 100vh;
-            padding: 80px 0;
-            position: relative;
+        .logo img {
+            height: 50px;  /* Taille du logo */
+            width: auto;
+            display: block;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 3rem;
-            color: #2c3e50;
-            margin-bottom: 3rem;
-            position: relative;
+        .nav-links {
+            display: flex;
+            list-style: none;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 2px;
+        .nav-links li {
+            margin-left: 30px;
         }
 
-        .activities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .activity-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .activity-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .activity-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .activity-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-        }
-
-        .activity-icon {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-
-        .activity-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .activity-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .activity-description {
-            color: #666;
-            text-align: center;
-            line-height: 1.8;
-        }
-
-        .highlight {
-            background: linear-gradient(120deg, #FFD700 0%, #FFA500 100%);
-            color: #333;
-            padding: 35px;
-            border-radius: 20px;
-            text-align: center;
-            margin: 50px 0;
-            box-shadow: 0 15px 35px rgba(255,215,0,0.3);
-            animation: pulse 2s infinite;
-        }
-
-        .highlight h3 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
-        .highlight p {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: #555;
-        }
-
-        .footer {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        .nav-links a {
             color: white;
-            text-align: center;
-            padding: 40px 0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
-        .footer p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+        .nav-links a:hover {
+            color: #1e33d7;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .content {
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 1;
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.02);
-            }
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        .floating-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
-        .floating-element {
-            position: absolute;
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: rgb(59, 56, 56);
+            text-decoration: none;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-weight: 500;
+            transition: all 0.3s;
         }
 
-        .floating-element:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-element:nth-child(2) {
-            top: 60%;
-            right: 15%;
-            animation-delay: 2s;
-        }
-
-        .floating-element:nth-child(3) {
-            top: 80%;
-            left: 60%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            h1 {
                 font-size: 2.5rem;
             }
             
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .activities-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .activity-card {
-                padding: 25px;
+            p {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <div class="floating-elements">
-            <div class="floating-element" style="font-size: 4rem;"></div>
-            <div class="floating-element" style="font-size: 3rem;"></div>
-            <div class="floating-element" style="font-size: 3.5rem;"></div>
+    <section class="accueil">
+        <div class="background-slider">
+            <div class="slide active" style="background-image: url('img/simelan.jpg');"></div>
+            <div class="slide" style="background-image: url('img/croco.JPG');"></div>
+            <div class="slide" style="background-image: url('img/pige.JPG');"></div>
+            <div class="overlay"></div>
         </div>
-        <div class="hero-content">
-            <h1>LETCHA DOUTCHA</h1>
-            <p class="edition"></p>
-            <p style="font-size: 1.3rem; margin-top: 10px; color: #0051ff; font-weight: bold;"></p>
-            <p style="font-size: 1.2rem; margin-top: 20px; opacity: 0.9;"></p>
-            <p style="font-size: 1rem; margin-top: 10px; opacity: 0.8;"></p>
-        </div>
-    </div>
-
-    <section class="program-section">
-        <div class="container">
-            <h2 class="section-title">Programme des Activités 2 eme édition 2025</h2>
-            
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <img src="dg.jpg" alt="Pêche">
-                    </div>
-                    <h3 class="activity-title">Séance de Pêche</h3>
-                    <p class="activity-description">Découvrez les techniques de pêche traditionnelles et profitez d'une expérience authentique au bord de l'eau dans la foret urbaine.</p>
+        
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="img/Letcha Doutcha Logo sans fond 2.png" alt="Logo Letchadoutcha">
                 </div>
-
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <img src="images/plat.JPG" alt="Cuisine locale">
-                    </div>
-                    <h3 class="activity-title">Dégustation de Plats Locaux</h3>
-                    <p class="activity-description">Savourez les délices culinaires d'Aného et découvrez les saveurs uniques de la gastronomie locale préparée avec amour.</p>
-                </div>
-
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <img src="images/iles.jpg" alt="Îles tropicales">
-                    </div>
-                    <h3 class="activity-title">Tour des Îles d'Aného</h3>
-                    <p class="activity-description">Explorez les magnifiques îles environnantes et découvrez des paysages à couper le souffle dans un cadre paradisiaque.</p>
-                </div>
-
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <img src="images/feeu.JPG" alt="Feu de camp">
-                    </div>
-                    <h3 class="activity-title">Soirée autour du Feu</h3>
-                    <p class="activity-description">Passez une soirée magique sur SIMELAN Plage autour d'un feu de camp sous les étoiles, moments de partage et de convivialité.</p>
-                </div>
-
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <img src="images/fruit.JPG" alt="Cocktails">
-                    </div>
-                    <h3 class="activity-title">Cocktails de Feu</h3>
-                    <p class="activity-description">Dégustez des cocktails exotiques préparés par nos mixologues avec des ingrédients locaux pour une expérience gustative unique.</p>
-                </div>
-
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Triathlon">
-                    </div>
-                    <h3 class="activity-title">Triathlon d'Aného</h3>
-                    <p class="activity-description">Participez au triathlon hommes et dames d'Aného, un défi sportif palpitant qui vous fera découvrir la beauté du territoire.</p>
-                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Programme</a></li>
+                    <li><a href="#">Chasse au trésor</a></li>
+                    <li><a href="#">Condition</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
             </div>
-
-            <div class="highlight">
-                <h3>La Chasse au Trésor TILAPIA D'OR</h3>
-                <p><strong>TROPHÉE : 300.000F</strong></p>
-                <p>Une aventure extraordinaire vous attend ! 13 énigmes à résoudre pour découvrir le légendaire Tilapia d'Or caché dans la ville aux trois royaumes.</p>
-                <div style="margin-top: 20px; font-size: 1rem;">
-                    <p><strong>Présélection :</strong> 13 septembre au 17 octobre</p>
-                    <p><strong>Finale :</strong> 18 au 19 octobre</p>
-                    <p><strong>Prix à gagner :</strong> Prix numérique de 300.000 FCFA décerné à celui ou celle qui retrouvera en premier le TILAPIA D'OR</p>
-                </div>
-            </div>
-
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <img src="https://images.unsplash.com/photo-1553284966-19b8815c7817?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Équitation">
-                    </div>
-                    <h3 class="activity-title">Activités Équestres</h3>
-                    <p class="activity-description">Découvrez l'équitation dans un cadre exceptionnel et profitez d'une balade à cheval le long des plages et dans la nature.</p>
-                </div>
-
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <img src="" alt="Peinture">
-                    </div>
-                    <h3 class="activity-title">Ateliers Peinture</h3>
-                    <p class="activity-description">Exprimez votre créativité en peignant les paysages magnifiques d'Aného sous la guidance d'artistes locaux talentueux.</p>
-                </div>
-
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <img src="images/fot.jpg" alt="Football">
-                    </div>
-                    <h3 class="activity-title">Football & Jeux</h3>
-                    <p class="activity-description">Participez à des matchs de football et découvrez d'autres jeux traditionnels dans l'ambiance festive d'Aného.</p>
-                </div>
-            </div>
-
-            <div class="highlight">
-                <h3>Conditions de Participation</h3>
-                <div style="text-align: left; max-width: 600px; margin: 0 auto;">
-                    <p><strong>• S'inscrire et payer ses frais d'inscription à LETCHA DOUTCHA</strong></p>
-                    <p><strong>• Les personnes inscrites seront contactées par +228 70767694 pour recevoir leur Carte au trésor</strong></p>
-                    <p style="margin-top: 15px; color: #d32f2f;"><strong>Place limitée !</strong></p>
-                    <p><strong>Contact :</strong> simelanafrique@gmail.com</p>
-                    <p><strong>Inscription :</strong> bit.ly/inscriptionsLetcha_Doutcha</p>
-                </div>
-            </div>
+        </nav>
+        
+        <div class="content">
+            <h1>Bienvenue à Letchadoutcha</h1>
+            <p>Programme LETCHA DOUTCHA Deuxième Édition 2025</p>
         </div>
     </section>
 
-    
     <script>
-        // Animation au scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.activity-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            observer.observe(card);
-        });
-
-        // Effet de parallaxe léger sur les éléments flottants
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelectorAll('.floating-element');
-            const speed = 0.5;
-
-            parallax.forEach(element => {
-                const yPos = -(scrolled * speed);
-                element.style.transform = `translateY(${yPos}px)`;
-            });
+        // Script pour le défilement des images
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+            
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+            
+            // Changer d'image toutes les 3 secondes
+            setInterval(nextSlide, 3000);
         });
     </script>
 </body>
 </html>
+ 
