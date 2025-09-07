@@ -16,6 +16,11 @@
             overflow-x: hidden;
         }
 
+        html {
+    scroll-behavior: smooth;
+}
+
+
         .accueil {
             height: 100vh;
             width: 100%;
@@ -170,24 +175,24 @@
 <body>
     <section class="accueil">
         <div class="background-slider">
-            <div class="slide active" style="background-image: url('img/simelan.jpg');"></div>
-            <div class="slide" style="background-image: url('img/croco.JPG');"></div>
-            <div class="slide" style="background-image: url('img/pige.JPG');"></div>
+            <div class="slide active" style="background-image: url('img/optimized/back.JPG');"></div>
+            <div class="slide" style="background-image: url('img/optimized/croco.JPG');"></div>
+            <div class="slide" style="background-image: url('img/optimized/coctail.JPG');"></div>
             <div class="overlay"></div>
         </div>
         
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="img/Letcha Doutcha Logo sans fond 2.png" alt="Logo Letchadoutcha">
+                    <img src="img\optimized\Letcha Doutcha Logo sans fond 2.png" alt="Logo Letchadoutcha">
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Programme</a></li>
-                    <li><a href="#">Chasse au trésor</a></li>
-                    <li><a href="#">Condition</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
+                  <li><a href="#">Accueil</a></li>
+                  <li><a href="#programme">Programme</a></li>
+                  <li><a href="#">Chasse au trésor</a></li>
+                  <li><a href="#">Condition</a></li>
+                  <li><a href="#">Contact</a></li>
+               </ul>
             </div>
         </nav>
         
@@ -196,6 +201,163 @@
             <p>Programme LETCHA DOUTCHA Deuxième Édition 2025</p>
         </div>
     </section>
+
+   
+<!-- Section Programme -->
+<section id="programme" style="padding: 60px 20px; background: #f5f5f5;">
+    <div style="max-width: 1200px; margin: auto; text-align: center;">
+        <h2 style="font-size: 2.2rem; margin-bottom: 15px; color: #1e33d7;">Programme LETCHA DOUTCHA 2025</h2>
+        <p style="font-size: 1rem; color: #555; margin-bottom: 40px;">Découvrez toutes les activités prévues pour cette deuxième édition inoubliable !</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; align-items: start;">
+
+            <!-- Exemple carte -->
+            <div class="card">
+                <img src="img/optimized/silvie (2).JPG" alt="Séance de Pêche">
+                <div class="card-content">
+                    <h3>Séance de Pêche</h3>
+                    <p>Participez à la séance de pêche Letchadoutcha et vivez une expérience unique mêlant tradition, partage et convivialité au cœur de la nature.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/optimized/cocktail.JPG" alt="Dégustation">
+                <div class="card-content">
+                    <h3>Dégustation de plats locaux</h3>
+                    <p>Savourez les délices locaux et laissez-vous emporter par les saveurs authentiques du terroir.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/optimized/iles.JPG" alt="Tour des îles">
+                <div class="card-content">
+                    <h3>Tour des îles d’Aného</h3>
+                    <p>Partez à l’aventure et découvrez des paysages insulaires à couper le souffle.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/optimized/soirée_feu.JPG" alt="Soirée feu">
+                <div class="card-content">
+                    <h3>Soirée autour du feu</h3>
+                    <p>Vivez la magie d’une soirée entre histoires, musique et convivialité sous les étoiles.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/optimized/cocktails_simelanesques.JPG" alt="Cocktails">
+                <div class="card-content">
+                    <h3>Des cocktails simélanesques</h3>
+                    <p>Laissez-vous séduire par nos cocktails, mélange parfait d’originalité et de fraîcheur.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/optimized/triathlon.JPG" alt="Triathlon">
+                <div class="card-content">
+                    <h3>Triathlon hommes et dames d'Aného</h3>
+                    <p>Dépassez vos limites et vivez l’adrénaline de la compétition.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/optimized/chasse_tresor.JPG" alt="Chasse au Trésor">
+                <div class="card-content">
+                    <h3>La chasse au Trésor TILAPIA D'OR</h3>
+                    <p>Relevez le défi et remportez des récompenses exceptionnelles.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/optimized/equestre.JPG" alt="Activités équestres">
+                <div class="card-content">
+                    <h3>Activités équestres</h3>
+                    <p>Profitez d’une balade à cheval au cœur des paysages pittoresques d’Aného.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/optimized/peinture.JPG" alt="Peinture">
+                <div class="card-content">
+                    <h3>Ateliers de peinture</h3>
+                    <p>Laissez libre cours à votre créativité et exprimez-vous à travers la peinture.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 15px auto 10px auto;
+}
+
+.card-content {
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    color: #1e33d7;
+    margin-bottom: 8px;
+    transition: font-size 0.3s;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.3;
+    transition: font-size 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.card:hover h3 {
+    font-size: 1.15rem;
+}
+
+.card:hover p {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    #programme h2 {
+        font-size: 1.8rem;
+    }
+    #programme p {
+        font-size: 0.95rem;
+    }
+    .card h3 {
+        font-size: 1rem;
+    }
+    .card p {
+        font-size: 0.85rem;
+    }
+    .card img {
+        width: 120px;
+        height: 120px;
+    }
+}
+</style>
 
     <script>
         // Script pour le défilement des images
