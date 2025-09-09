@@ -296,28 +296,60 @@
         <script>
             // Liste des images pour le background
             const heroImages = [
-                'https://i.postimg.cc/yd6g6rLv/htr.jpg',
-                'https://i.postimg.cc/T1z3bkc8/DSC-4280.jpg',
-                'https://i.postimg.cc/Dz00tb0M/WUL-7570.jpg',
-                'https://i.postimg.cc/rFsHRVdL/urbain.jpg',
-                'https://i.postimg.cc/FzM0KVdz/DSC-4068.jpg'
-            ];
+    'https://i.postimg.cc/yd6g6rLv/htr.jpg',
+    'https://i.postimg.cc/T1z3bkc8/DSC-4280.jpg',
+    'https://i.postimg.cc/Dz00tb0M/WUL-7570.jpg',
+    'https://i.postimg.cc/rFsHRVdL/urbain.jpg',
+    'https://i.postimg.cc/FzM0KVdz/DSC-4068.jpg'
+];
 
+let currentIndex = 0;
+const bg1 = document.getElementById("bg1");
+const bg2 = document.getElementById("bg2");
+let showingBg1 = true;
 
-            let currentIndex = 0;
-            const heroSection = document.getElementById('accueil');
-
-            // Fonction pour changer le background
-            function changeHeroBackground() {
-                heroSection.style.background = `url('${heroImages[currentIndex]}') no-repeat center center/cover`;
-                currentIndex = (currentIndex + 1) % heroImages.length;
+// Fonction pour précharger les images
+function preloadImages(images, callback) {
+    let loaded = 0;
+    images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+            loaded++;
+            if (loaded === images.length) {
+                callback();
             }
+        };
+    });
+}
 
-            // Lancer le changement toutes les 2 secondes
-            setInterval(changeHeroBackground, 2000);
+// Changement de fond avec fondu
+function changeHeroBackground() {
+    currentIndex = (currentIndex + 1) % heroImages.length;
+    const nextImage = heroImages[currentIndex];
 
-            // Initialiser le background au chargement
-            changeHeroBackground();
+    if (showingBg1) {
+        bg2.style.backgroundImage = `url('${nextImage}')`;
+        bg2.classList.remove("hidden");
+        bg2.classList.add("visible");
+        bg1.classList.remove("visible");
+        bg1.classList.add("hidden");
+    } else {
+        bg1.style.backgroundImage = `url('${nextImage}')`;
+        bg1.classList.remove("hidden");
+        bg1.classList.add("visible");
+        bg2.classList.remove("visible");
+        bg2.classList.add("hidden");
+    }
+    showingBg1 = !showingBg1;
+}
+
+// Lancer après préchargement
+preloadImages(heroImages, () => {
+    bg1.style.backgroundImage = `url('${heroImages[currentIndex]}')`;
+    setInterval(changeHeroBackground, 6000); // toutes les 6s
+});
+  
         </script>
 
         <!-- Section À propos -->
@@ -518,7 +550,7 @@
                         <div class="partner-card text-center">
                             <img src="https://i.postimg.cc/25Ch3xG9/lacs.jpg" alt="Partenaire Lacs1"
                                 class="img-fluid mb-2">
-                            <h5><a href="">lacs1</a></h5>
+                            <h5><a href="https://lacs1.mairie.tg/">lacs1</a></h5>
                         </div>
                     </div>
 

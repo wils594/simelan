@@ -243,7 +243,7 @@ strong {
 }
 
 .nav-tabs {
-  background: rgba(255, 215, 0, 0.2); /* jaune doré semi-transparent */
+  background: rgba(8, 28, 107, 0.2); /* jaune doré semi-transparent */
   backdrop-filter: blur(10px); /* effet glass */
   -webkit-backdrop-filter: blur(10px); /* support Safari */
   border-radius: var(--border-radius-large);
@@ -270,7 +270,7 @@ strong {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-link:focus, 
 .nav-tabs .nav-link:hover {
-  background: rgba(255, 215, 0, 0.4); /* jaune doré plus prononcé au hover/actif */
+  background: rgba(13, 48, 190, 0.4); /* jaune doré plus prononcé au hover/actif */
   box-shadow: 0 1rem 3rem rgba(0,0,0,0.175);
   color: #e7eb7c; /* texte sombre sur hover/actif */
 }
@@ -283,7 +283,7 @@ strong {
 .nav-tabs .nav-link.active h5,
 .nav-tabs .nav-link:focus h5, 
 .nav-tabs .nav-link:hover h5 {
-  color: #ebc727; /* texte sombre sur hover/actif */
+  color: #3427eb; /* texte sombre sur hover/actif */
 }
 
 
