@@ -296,60 +296,28 @@
         <script>
             // Liste des images pour le background
             const heroImages = [
-    'https://i.postimg.cc/yd6g6rLv/htr.jpg',
-    'https://i.postimg.cc/T1z3bkc8/DSC-4280.jpg',
-    'https://i.postimg.cc/Dz00tb0M/WUL-7570.jpg',
-    'https://i.postimg.cc/rFsHRVdL/urbain.jpg',
-    'https://i.postimg.cc/FzM0KVdz/DSC-4068.jpg'
-];
+                'https://i.postimg.cc/yd6g6rLv/htr.jpg',
+                'https://i.postimg.cc/T1z3bkc8/DSC-4280.jpg',
+                'https://i.postimg.cc/Dz00tb0M/WUL-7570.jpg',
+                'https://i.postimg.cc/rFsHRVdL/urbain.jpg',
+                'https://i.postimg.cc/FzM0KVdz/DSC-4068.jpg'
+            ];
 
-let currentIndex = 0;
-const bg1 = document.getElementById("bg1");
-const bg2 = document.getElementById("bg2");
-let showingBg1 = true;
 
-// Fonction pour précharger les images
-function preloadImages(images, callback) {
-    let loaded = 0;
-    images.forEach(src => {
-        const img = new Image();
-        img.src = src;
-        img.onload = () => {
-            loaded++;
-            if (loaded === images.length) {
-                callback();
+            let currentIndex = 0;
+            const heroSection = document.getElementById('accueil');
+
+            // Fonction pour changer le background
+            function changeHeroBackground() {
+                heroSection.style.background = `url('${heroImages[currentIndex]}') no-repeat center center/cover`;
+                currentIndex = (currentIndex + 1) % heroImages.length;
             }
-        };
-    });
-}
 
-// Changement de fond avec fondu
-function changeHeroBackground() {
-    currentIndex = (currentIndex + 1) % heroImages.length;
-    const nextImage = heroImages[currentIndex];
+            // Lancer le changement toutes les 2 secondes
+            setInterval(changeHeroBackground, 2000);
 
-    if (showingBg1) {
-        bg2.style.backgroundImage = `url('${nextImage}')`;
-        bg2.classList.remove("hidden");
-        bg2.classList.add("visible");
-        bg1.classList.remove("visible");
-        bg1.classList.add("hidden");
-    } else {
-        bg1.style.backgroundImage = `url('${nextImage}')`;
-        bg1.classList.remove("hidden");
-        bg1.classList.add("visible");
-        bg2.classList.remove("visible");
-        bg2.classList.add("hidden");
-    }
-    showingBg1 = !showingBg1;
-}
-
-// Lancer après préchargement
-preloadImages(heroImages, () => {
-    bg1.style.backgroundImage = `url('${heroImages[currentIndex]}')`;
-    setInterval(changeHeroBackground, 6000); // toutes les 6s
-});
-  
+            // Initialiser le background au chargement
+            changeHeroBackground();
         </script>
 
         <!-- Section À propos -->
@@ -550,7 +518,7 @@ preloadImages(heroImages, () => {
                         <div class="partner-card text-center">
                             <img src="https://i.postimg.cc/25Ch3xG9/lacs.jpg" alt="Partenaire Lacs1"
                                 class="img-fluid mb-2">
-                            <h5><a href="https://lacs1.mairie.tg/">lacs1</a></h5>
+                            <h5><a href="">lacs1</a></h5>
                         </div>
                     </div>
 
@@ -737,9 +705,9 @@ preloadImages(heroImages, () => {
                             <h2>LETCHA DOUTCHA 2025</h2>
                             <p>Découvrez nos moments inoubliables et nos partenaires de confiance.</p>
                             <div class="social-icon">
-                                <a href="#"><i class="bi bi-whatsapp"></i></a>
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="https://chat.whatsapp.com/CJmhgUVuuzOIDyMDg6crdF?mode=ems_wa_c"><i class="bi bi-whatsapp"></i></a>
+                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7368026636924903425"><i class="bi bi-linkedin"></i></a>
+                                
                                 <a
                                     href="https://www.facebook.com/100080343682863/posts/pfbid031SjsvL1PStxrvsMEGzyYYcL8scnQ9C8eskMcwe3eaaZaze3VHLLoBhGhnDoM7Vpol/?app=fbl"><i
                                         class="bi bi-facebook"></i></a>
@@ -777,7 +745,8 @@ preloadImages(heroImages, () => {
 
                 <!-- Boutton-->
                 <div class="site-footer-bottom mt-3">
-                    <p>&copy; 2025 Letcha Doutcha. Tous droits réservés. | <a href="">Conditions d'utilisation</a> | <a
+                    <p>&copy; 2025 Letcha Doutcha. Tous droits réservés. |<a href="conditions.html" target="_blank">Conditions d’utilisation</a>
+ | <a
                             href="">Politique de confidentialité</a> | <a href="">Vos retours</a> </p>
                 </div>
             </div>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditions d'utilisation - Letcha Doutcha 2025</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #2222ce;
+      --accent: #f97316;
+      --light: #f8fafc;
+      --dark: #1e293b;
+      --gray: #64748b;
+      --light-gray: #e2e8f0;
+      --success: #222ac5;
+      --border-radius: 12px;
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      color: var(--dark);
+      min-height: 100vh;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+      background-size: cover;
+    }
+    
+    .logo {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+      background: linear-gradient(to right, #080808, #08050c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Content */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    
+    @media (min-width: 768px) {
+      .content-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .full-width {
+        grid-column: 1 / -1;
+      }
+    }
+    
+    .content-card {
+      background: white;
+      border-radius: var(--border-radius);
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      border-top: 4px solid var(--primary);
+    }
+    
+    .content-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .content-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.03) 0%, rgba(126, 34, 206, 0.03) 100%);
+      z-index: 0;
+    }
+    
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: white;
+      font-size: 1.5rem;
+    }
+    
+    h2 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    
+    p {
+      margin-bottom: 1.2rem;
+      color: var(--dark);
+      position: relative;
+    }
+    
+    ul {
+      margin: 0 0 1.5rem 1rem;
+      position: relative;
+    }
+    
+    li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    li::before {
+      content: '•';
+      color: var(--primary);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+    
+    /* Contact section */
+    .contact-info {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      padding: 2.5rem;
+      border-radius: var(--border-radius);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+    
+    .contact-info h2 {
+      color: white;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    .contact-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      transition: var(--transition);
+    }
+    
+    .contact-item:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+    }
+    
+    .contact-item i {
+      margin-right: 10px;
+      font-size: 1.5rem;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2.5rem;
+      background: var(--dark);
+      color: white;
+      margin-top: 4rem;
+    }
+    
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .footer-logo {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: inline-block;
+      background: linear-gradient(to right, #1e00ff, #2436fb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transition: var(--transition);
+      z-index: 1000;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+    }
+    
+    .back-to-top:hover {
+      transform: translateY(-3px);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .content-card {
+        padding: 1.8rem;
+      }
+      
+      .card-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .contact-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      
+      .contact-item {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">Letcha Doutcha</div>
+      <h1>Conditions d'utilisation</h1>
+      <p class="subtitle">Édition 2025 - Dernière mise à jour: 15 avril 2025</p>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h2>1. Objet</h2>
+        </div>
+        <p>Les présentes conditions ont pour objet de définir les règles d'utilisation du site officiel et de participation aux activités liées à Letcha Doutcha 2025. En accédant au site ou en vous inscrivant à l'événement, vous acceptez sans réserve ces conditions.</p>
+      </div>
+      
+      <div class="content-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <h2>2. Accès et utilisation du site</h2>
+        </div>
+        <ul>
+          <li>L'accès au site est ouvert à tous, sous réserve de disposer d'une connexion Internet.</li>
+          <li>Les informations publiées sont fournies à titre informatif. L'organisation se réserve le droit de les modifier à tout moment sans préavis.</li>
+          <li>Toute utilisation frauduleuse ou détournée du site est interdite.</li>
+        </ul>
+      </div>
+      
+      <div class="content-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-user-check"></i>
+          </div>
+          <h2>3. Inscriptions et participation</h2>
+        </div>
+        <ul>
+          <li>La participation aux activités de Letcha Doutcha 2025 nécessite une inscription préalable via le formulaire officiel.</li>
+          <li>Les informations fournies doivent être exactes et véridiques.</li>
+          <li>L'organisation se réserve le droit de refuser ou d'annuler une inscription en cas de non-respect des règles.</li>
+        </ul>
+      </div>
+      
+      <div class="content-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-copyright"></i>
+          </div>
+          <h2>4. Propriété intellectuelle</h2>
+        </div>
+        <p>Les logos, visuels, vidéos et contenus diffusés sur le site ou lors de l'événement sont protégés par les lois sur la propriété intellectuelle. Toute reproduction, diffusion ou exploitation non autorisée est interdite.</p>
+      </div>
+      
+      <div class="content-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h2>5. Responsabilité</h2>
+        </div>
+        <ul>
+          <li>L'organisation met tout en œuvre pour assurer le bon déroulement de l'événement, mais ne peut être tenue responsable des interruptions de service, pertes de données ou dommages liés à l'utilisation du site.</li>
+          <li>Les participants sont responsables de leur propre comportement pendant l'événement et doivent respecter les consignes de sécurité.</li>
+        </ul>
+      </div>
+      
+      <div class="content-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h2>6. Données personnelles</h2>
+        </div>
+        <p>Les données collectées lors des inscriptions (nom, contact, email, etc.) sont utilisées uniquement dans le cadre de Letcha Doutcha 2025. Elles ne seront ni revendues ni partagées à des tiers sans autorisation préalable. Conformément à la réglementation en vigueur, chaque participant peut demander la suppression de ses données.</p>
+      </div>
+      
+      <div class="content-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-clipboard-list"></i>
+          </div>
+          <h2>7. Règlement intérieur</h2>
+        </div>
+        <ul>
+          <li>Le respect des lieux, des organisateurs et des autres participants est obligatoire.</li>
+          <li>Il est interdit d'introduire des substances illicites, dangereuses ou tout objet pouvant compromettre la sécurité.</li>
+          <li>Toute personne ne respectant pas ce règlement pourra être exclue de l'événement sans remboursement.</li>
+        </ul>
+      </div>
+      
+      <div class="content-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <h2>8. Modification des conditions</h2>
+        </div>
+        <p>Les présentes conditions peuvent être modifiées à tout moment. Les utilisateurs et participants sont invités à les consulter régulièrement.</p>
+      </div>
+      
+      <div class="content-card full-width">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h2>9. Contact</h2>
+        </div>
+        <p>Pour toute question relative aux présentes conditions, vous pouvez nous contacter via :</p>
+        
+        <div class="contact-info">
+          <div class="contact-items">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              Email : contact@letchadoutcha.tg
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              Téléphone :  00228 72 21 93 30
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              Adresse : Lomé, Togo
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">Letcha Doutcha</div>
+      <p>&copy; 2025 Letcha Doutcha – Tous droits réservés</p>
+      <p>Organisé avec passion pour la communauté</p>
+    </div>
+  </footer>
+  
+  <a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Bouton retour en haut
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // Animation des cartes au défilement
+    const cards = document.querySelectorAll('.content-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    cards.forEach(card => {
+      card.style.opacity = 0;
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
