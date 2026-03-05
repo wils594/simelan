@@ -42,18 +42,17 @@
         #glass-nav .navbar-brand,
         #glass-nav .nav-link {
             color: #FFFFFF !important;
+            white-space: nowrap;
         }
 
         #glass-nav .nav-link:hover {
             color: #CCCCCC !important;
         }
 
-        /* Icône du menu mobile en blanc */
         #glass-nav .navbar-toggler-icon {
             filter: invert(1); 
         }
 
-        /* Ajustement du menu déroulant (opaque) */
         #glass-nav .dropdown-menu {
             background-color: rgba(33, 37, 41, 0.9);
             border: none;
@@ -89,32 +88,27 @@
             transition: background-image 0.5s ease-in-out; 
         }
         
-        /* ======================================= */
-        /* 3. STYLE SECTION À PROPOS (FOND CLAIR) */
-        /* ======================================= */
         .about-section {
-            background: #f8f9fa; /* Fond clair */
+            background: #f8f9fa;
             padding: 60px 0;
         }
         
         .about-section h2, 
         .about-section p, 
         .about-section h6 {
-            color: #333333 !important; /* Texte sombre pour lisibilité sur fond clair */
+            color: #333333 !important; 
         }
         
-        /* ======================================= */
-        /* 4. STYLE FOOTER (FOND GRIS FONCÉ) */
-        /* ======================================= */
+       
         .site-footer {
-            background: #212529; /* Gris foncé standard */
+            background: #212529;
             color: #fff;
             padding: 40px 0 20px 0;
             font-family: Arial, sans-serif;
             font-size: 0.95rem;
         }
         
-        /* Styles pour la galerie avec effet hover */
+       
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -308,7 +302,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#apropos">propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#apropos">A propos</a></li>
                         <li class="nav-item"><a class="nav-link" href="#galerie">Galerie</a></li>
 
                         <li class="nav-item dropdown">
@@ -364,7 +358,7 @@
         <script>
             // Image pour le background
             const heroSection = document.getElementById('accueil');
-            heroSection.style.backgroundImage = `url('https://i.postimg.cc/JzNzDVdM/WUL-7656.jpg')`;
+            heroSection.style.backgroundImage = `url('img/background2.jpg')`;
         </script>
 
 
@@ -696,7 +690,7 @@
                                 <li><a href="#galerie">Galerie</a></li>
                                 <li><a href="#partenaire">Partenaires</a></li>
                                 <li><a href="#localisation">Localisation</a></li>
-                                <li><a href="#contact">Contact</a></li>
+                                <li><a href="#contact">Contacts</a></li>
                             </ul>
                         </div>
                     </div>
