@@ -27,6 +27,43 @@
         .navbar {
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+
+        /* Styles copied from homepage for consistent glass navbar */
+        #glass-nav {
+            background-color: rgba(0, 102, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        #glass-nav .navbar-brand,
+        #glass-nav .nav-link {
+            color: #FFFFFF !important;
+        }
+
+        #glass-nav .nav-link:hover {
+            color: #CCCCCC !important;
+        }
+
+        #glass-nav .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        #glass-nav .dropdown-menu {
+            background-color: rgba(33, 37, 41, 0.9);
+            border: none;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+
+        #glass-nav .dropdown-item {
+            color: #FFFFFF;
+        }
+
+        #glass-nav .dropdown-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
         
         .hero-section {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://i.postimg.cc/yd6g6rLv/htr.jpg') center/cover no-repeat;
@@ -104,7 +141,7 @@
         }
         
         .testimonial-card::before {
-            content: """;
+            content: '"';
             position: absolute;
             top: 10px;
             left: 10px;
@@ -298,29 +335,38 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <!-- Navigation (copied from homepage, without Partenaires / Localisation / Rejoignez-nous) -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="glass-nav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="https://i.postimg.cc/PqDNMvxs/Letcha-Doutcha-Logo-sans-fond-2.png" alt="Letcha Doutcha" height="40">
+            <a class="navbar-brand" href="#accueil">
+                <img src="https://i.postimg.cc/PqDNMvxs/Letcha-Doutcha-Logo-sans-fond-2.png" alt="" style="height:40px;">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Accueil</a>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#apropos">propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galerie">Galerie</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="editionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Éditions précédentes
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="editionsDropdown">
+                            <li><a class="dropdown-item" href="edition1.html">Premiere édition</a></li>
+                            <li><a class="dropdown-item" href="edition2.html">Deuxième édition</a></li>
+                            <li><a class="dropdown-item" href="edition3.html">Troisième édition</a></li>
+
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="edition2.html">Édition 2025</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#galerie">Galerie</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact">Contact</a>
-                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacts</a></li>
                 </ul>
             </div>
         </div>
@@ -331,34 +377,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <span class="edition-badge">Deuxième Édition</span>
                     <h1 class="display-3 fw-bold">Letcha Doutcha 2025</h1>
                     <p class="lead">18 & 19 Octobre 2025 - Aného, Togo</p>
                     <p class="mb-4">Rejoignez-nous pour deux jours d'immersion unique entre pêche, culture et networking</p>
-                    <a href="#inscription" class="btn btn-primary btn-lg mt-3">Je m'inscris</a>
-                    
-                    <!-- Compte à rebours -->
-                    <div class="countdown-container">
-                        <h4 class="mb-3">Compte à rebours</h4>
-                        <div class="countdown">
-                            <div class="countdown-item">
-                                <div class="countdown-number" id="days">00</div>
-                                <div class="countdown-label">Jours</div>
-                            </div>
-                            <div class="countdown-item">
-                                <div class="countdown-number" id="hours">00</div>
-                                <div class="countdown-label">Heures</div>
-                            </div>
-                            <div class="countdown-item">
-                                <div class="countdown-number" id="minutes">00</div>
-                                <div class="countdown-label">Minutes</div>
-                            </div>
-                            <div class="countdown-item">
-                                <div class="countdown-number" id="seconds">00</div>
-                                <div class="countdown-label">Secondes</div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
