@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revivement - Première Édition Letcha Doutcha 2025</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -40,6 +37,7 @@
         #glass-nav .navbar-brand,
         #glass-nav .nav-link {
             color: #FFFFFF !important;
+            white-space: nowrap;
         }
 
         #glass-nav .nav-link:hover {
@@ -141,7 +139,7 @@
         }
         
         .testimonial-card::before {
-            content: """;
+            content: '"';
             position: absolute;
             top: 10px;
             left: 10px;
@@ -196,11 +194,10 @@
     </style>
 </head>
 <body>
-    <!-- Navigation (copied from homepage, without Partenaires / Localisation / Rejoignez-nous) -->
     <nav class="navbar navbar-expand-lg fixed-top" id="glass-nav">
         <div class="container">
-            <a class="navbar-brand" href="#accueil">
-                <img src="https://i.postimg.cc/PqDNMvxs/Letcha-Doutcha-Logo-sans-fond-2.png" alt="" style="height:40px;">
+            <a class="navbar-brand me-auto" href="index.html#accueil">
+                <img src="https://i.postimg.cc/PqDNMvxs/Letcha-Doutcha-Logo-sans-fond-2.png" alt="Logo" style="height:40px;">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -210,9 +207,9 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#apropos">propos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galerie">Galerie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#accueil">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#apropos">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#galerie">Galerie</a></li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="editionsDropdown" role="button"
@@ -223,17 +220,21 @@
                             <li><a class="dropdown-item" href="edition1.html">Premiere édition</a></li>
                             <li><a class="dropdown-item" href="edition2.html">Deuxième édition</a></li>
                             <li><a class="dropdown-item" href="edition3.html">Troisième édition</a></li>
-
                         </ul>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contacts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#partenaire">Partenaires</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#localisation">Localisation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contacts</a></li>
+                    
+                    <li class="nav-item ms-auto pe-3">
+                        <a class="nav-link btn btn-primary text-white" href="https://chat.whatsapp.com/CJmhgUVuuzOIDyMDg6crdF" target="_blank" rel="noopener noreferrer" style="white-space: nowrap; padding: 0.5rem 1.5rem; margin-left: 10px;">Rejoignez-nous</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
             <div class="row">
@@ -246,7 +247,6 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
     <section class="py-5">
         <div class="container">
             <div class="row g-4">
@@ -278,13 +278,11 @@
         </div>
     </section>
 
-    <!-- Memories Section -->
     <section id="memories" class="py-5 bg-light">
         <div class="container">
             <h2 class="section-title">Souvenirs Mémorables</h2>
             
             <div class="row g-4">
-                <!-- Memory 1 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="memory-card">
                         <img src="https://i.postimg.cc/J4Bw0NdL/DSC-4091.jpg" alt="Séance de pêche" class="memory-img">
@@ -295,7 +293,6 @@
                     </div>
                 </div>
                 
-                <!-- Memory 2 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="memory-card">
                         <img src="https://i.postimg.cc/4ys5GTMy/DSC-4022.jpg" alt="Dégustation culinaire" class="memory-img">
@@ -306,7 +303,6 @@
                     </div>
                 </div>
                 
-                <!-- Memory 3 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="memory-card">
                         <img src="https://i.postimg.cc/fySwM694/WUL-7657.jpg" alt="Ateliers" class="memory-img">
@@ -317,7 +313,6 @@
                     </div>
                 </div>
                 
-                <!-- Memory 4 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="memory-card">
                         <img src="https://i.postimg.cc/TYHr7mRp/chapeau.jpg" alt="Networking" class="memory-img">
@@ -328,7 +323,6 @@
                     </div>
                 </div>
                 
-                <!-- Memory 5 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="memory-card">
                         <img src="https://i.postimg.cc/JzNzDVdM/WUL-7656.jpg" alt="Animations culturelles" class="memory-img">
@@ -339,7 +333,6 @@
                     </div>
                 </div>
                 
-                <!-- Memory 6 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="memory-card">
                         <img src="https://i.postimg.cc/43FyZvS9/DSC-4006.jpg" alt="Cérémonie de clôture" class="memory-img">
@@ -353,7 +346,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
     <section class="py-5">
         <div class="container">
             <h2 class="section-title">Ils en parlent</h2>
@@ -390,43 +382,33 @@
         </div>
     </section>
 
-    <!-- Video Section -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <h2 class="section-title">Revivez l'ambiance</h2>
-        
-        <div class="row justify-content-center">
-            <div class="col-lg-10 text-center">
-                <video controls style="width:auto; height:auto; max-width:100%;">
-                    <source src="urbain.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la vidéo.
-                </video>
-                <p class="text-center mt-3">
-                    Découvrez plus de vidéos sur notre 
-                    <a href="" target="_blank">chaîne YouTube</a>
-                </p>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Revivez l'ambiance</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <video controls style="width:auto; height:auto; max-width:100%;">
+                        <source src="urbain.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la vidéo.
+                    </video>
+                    <p class="text-center mt-3">
+                        Découvrez plus de vidéos sur notre 
+                        <a href="" target="_blank">chaîne YouTube</a>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-    <section class="py-5" style="display: none;">
-    ...
-</section>
-
-
-
-    <!-- Call to Action -->
     <section class="py-5 bg-primary text-white">
         <div class="container text-center">
             <h2 class="mb-4">Prêt pour la prochaine édition?</h2>
             <p class="lead mb-4">Rejoignez-nous pour des moments encore plus mémorables</p>
-            <a href="0022872219330" class="btn btn-light btn-lg">Restez informé</a>
+            <a href="tel:0022872219330" class="btn btn-light btn-lg">Restez informé</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">
@@ -451,7 +433,7 @@
                 </div>
                 <div class="col-lg-4 mb-4">
                     <h5>Contact</h5>
-                    <p><i class="bi bi-telephone"></i> 00228 72 21 93 30</p>
+                    <p><i class="bi bi-telephone"></i> 00228 72 21 93 30</p>
                     <p><i class="bi bi-envelope"></i> simelanafrique@gmail.com</p>
                     <p><i class="bi bi-geo-alt"></i> Aného, Togo</p>
                 </div>
@@ -463,7 +445,6 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
