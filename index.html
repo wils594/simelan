@@ -13,13 +13,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ThemeWagon/FestavaLive@main/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/templatemo-festava-live.css" rel="stylesheet">
-    
+
     <link rel="icon" href="img/optimized/Letcha Doutcha 3.png" type="image/png">
 
     <style>
@@ -27,18 +27,13 @@
         /* 1. STYLE CUSTOM GLASSMORPHYSM NAV BAR (BLEU) */
         /* ======================================= */
         #glass-nav {
-            /* Fond bleu semi-transparent (20% d'opacité) */
-            background-color: rgba(0, 102, 255, 0.2); 
-            
-            /* Effet de flou de verre */
+            background-color: rgba(0, 102, 255, 0.2);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px); 
-            
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
-        /* Texte en blanc pour la visibilité */
         #glass-nav .navbar-brand,
         #glass-nav .nav-link {
             color: #FFFFFF !important;
@@ -50,7 +45,7 @@
         }
 
         #glass-nav .navbar-toggler-icon {
-            filter: invert(1); 
+            filter: invert(1);
         }
 
         #glass-nav .dropdown-menu {
@@ -72,43 +67,30 @@
         /* 2. STYLE SECTION HERO (ACCUEIL) */
         /* ======================================= */
         #accueil {
-            height: 100vh;
-            width: 100%;
-            position: relative; 
-            
-            /* ESSENTIEL pour l'adaptation et la transition */
-            background-size: cover !important; 
+            background-size: cover !important;
             background-position: center center !important;
             background-repeat: no-repeat !important;
-            
-            /* Évite le flash blanc entre les changements */
-            background-color: #000; 
-            
-            /* Transition douce pour le changement d'image */
-            transition: background-image 0.5s ease-in-out; 
+            transition: background-image 0.5s ease-in-out;
         }
-        
+
+        #accueil.hero-section {
+            background: url(img/edition3/DSC_1220.jpg)
+        }
+
+        /* ======================================= */
+        /* 3. STYLE SECTION ABOUT & GALERIE */
+        /* ======================================= */
         .about-section {
             background: #f8f9fa;
             padding: 60px 0;
         }
-        
-        .about-section h2, 
-        .about-section p, 
+
+        .about-section h2,
+        .about-section p,
         .about-section h6 {
-            color: #333333 !important; 
+            color: #333333 !important;
         }
-        
-       
-        .site-footer {
-            background: #212529;
-            color: #fff;
-            padding: 40px 0 20px 0;
-            font-family: Arial, sans-serif;
-            font-size: 0.95rem;
-        }
-        
-       
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -155,7 +137,9 @@
             transform: translateY(0);
         }
 
-        /* Styles pour le menu déroulant */
+        /* ======================================= */
+        /* 4. DROPDOWN & LOCALISATION */
+        /* ======================================= */
         .dropdown-menu {
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
@@ -164,7 +148,6 @@
             background-color: #f8f9fa;
         }
 
-        /* Styles pour la section localisation */
         .location-section {
             background: rgba(255, 255, 255, 0.9);
             padding: 60px 0;
@@ -185,7 +168,54 @@
             border-radius: 15px;
         }
 
-        /* Styles pour le footer */
+        /* ======================================= */
+        /* 5. PARTENAIRES */
+        /* ======================================= */
+        .partners-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 60px 0;
+        }
+
+        .partner-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .partner-card img {
+            max-width: 100%;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .partner-card h5 {
+            color: #333;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ======================================= */
+        /* 6. FOOTER */
+        /* ======================================= */
+        .site-footer {
+            background: #212529;
+            color: #fff;
+            padding: 40px 0 20px 0;
+            font-family: Arial, sans-serif;
+            font-size: 0.95rem;
+        }
+
         .site-footer a {
             color: #fff;
             text-decoration: none;
@@ -247,41 +277,6 @@
             background-color: #0044cc;
             color: #fff;
         }
-
-        /* Styles pour la section partenaires */
-        .partners-section {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 60px 0;
-        }
-
-        .partner-card {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 15px;
-            text-align: center;
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .partner-card img {
-            max-width: 100%;
-            height: 80px;
-            object-fit: contain;
-            margin-bottom: 10px;
-        }
-
-        .partner-card h5 {
-            color: #333;
-            margin: 0;
-            font-weight: 500;
-        }
-
-        .partner-card:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
     </style>
 </head>
 
@@ -314,7 +309,6 @@
                                 <li><a class="dropdown-item" href="edition1.html">Premiere édition</a></li>
                                 <li><a class="dropdown-item" href="edition2.html">Deuxième édition</a></li>
                                 <li><a class="dropdown-item" href="edition3.html">Troisième édition</a></li>
-
                             </ul>
                         </li>
 
@@ -328,61 +322,35 @@
                 </div>
             </div>
         </nav>
-        
-        <section id="accueil" class="hero-section" style="
-            position: relative;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        ">
-            <div class="overlay" style="
-                position: absolute;
-                top:0;
-                left:0;
-                width:100%;
-                height:100%;
-                background-color: rgba(36, 35, 35, 0.3); /* Légèrement sombre */
-                z-index: 1;
-            "></div>
+
+        <section id="accueil" class="hero-section" style="position: relative; height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center;">
+            <div class="overlay" style="position: absolute; top:0; left:0; width:100%; height:100%; background-color: rgba(36, 35, 35, 0.3); z-index: 1;"></div>
 
             <div style="position: relative; z-index: 2;">
                 <h1 class="text-white mb-4">Bienvenue à Letcha Doutcha</h1>
                 <p class="text-white mb-4">Là où ciel, terre et vent se retrouve </p>
                 <h4 class="text-white">Une nouvelle édition se prépare… Pourquoi ne pas nous rejoindre pour partager cette aventure ?</h4>
                 <a href="https://bit.ly/InscriptionsLetcha_Doutcha" class="btn btn-primary btn-lg mt-3 px-4" target="_blank" rel="noopener">S'inscrire</a>
-                </div>
+            </div>
         </section>
-        
-        <script>
-            // Image pour le background
-            const heroSection = document.getElementById('accueil');
-            heroSection.style.backgroundImage = `url('img/background2.jpg')`;
-        </script>
-
 
         <section class="about-section section-padding" id="apropos">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex flex-column justify-content-center">
                         <div class="services-info">
                             <h2 class="mb-4">À PROPOS DE LETCHA DOUTCHA 2025</h2>
-
                             <p>
                                 Letcha Doutcha est bien plus qu'une simple rencontre, c'est un événement unique qui
                                 allie la passion de la pêche et l'art du réseautage. Organisé sur les magnifiques plages
                                 d'Aného, ce rendez-vous rassemble passionnés, professionnels et amoureux de la mer
                                 autour d'activités authentiques et conviviales.
                             </p>
-
                             <h6 class="mt-4">
                                 Au programme : des séances de pêche inoubliables, un déjeuner dans l'eau, des découvertes culinaires locales,
                                 des animations culturelles et des moments privilégiés pour échanger, créer des liens et
                                 renforcer la communauté.
                             </h6>
-
                             <p>
                                 Notre mission est de faire de Letcha Doutcha un espace de partage, où la tradition
                                 rencontre l'innovation et où chaque rencontre devient une opportunité. C'est l'occasion
@@ -392,29 +360,23 @@
                                 Rejoignez-nous pour Letcha Doutcha : une expérience qui mêle aventure, culture et
                                 réseautage, et qui transforme chaque instant en souvenir mémorable.
                             </p>
-
                             <div class="text-center mt-4">
-                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7368026636924903425"
-                                    class="btn btn-primary"> En Savoir plus</a>
+                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7368026636924903425" class="btn btn-primary"> En Savoir plus</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-lg-6 col-12">
-                        <div class="about-text-wrap text-center"> 
-                            <img src="img/manulele.jpg" class="about-image img-fluid"
-                                alt="À propos de Letcha Doutcha"
-                                style="max-width: 75%; height: auto; margin: 0 auto; display: block;"> 
+                        <div class="about-text-wrap text-center">
+                            <img src="img/manulele.jpg" class="about-image img-fluid" alt="À propos de Letcha Doutcha" style="max-width: 75%; height: auto; margin: 0 auto; display: block;">
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
         <section class="gallery-section section-padding" id="galerie">
             <div class="container text-center">
-
                 <h2>Notre Galerie</h2>
                 <p>Découvrez quelques moments forts de nos événements</p>
 
@@ -425,49 +387,42 @@
                             <h5>Édition 2025</h5>
                         </div>
                     </div>
-
                     <div class="gallery-item">
                         <img src="https://i.postimg.cc/4ys5GTMy/DSC-4022.jpg" alt="Moment fort 2">
                         <div class="gallery-overlay">
                             <h5>Édition 2025</h5>
                         </div>
                     </div>
-
                     <div class="gallery-item">
                         <img src="https://i.postimg.cc/tTRhKdVw/adele.jpg" alt="Moment fort 3">
                         <div class="gallery-overlay">
                             <h5>Édition 2025</h5>
                         </div>
                     </div>
-
                     <div class="gallery-item">
                         <img src="img/deborah.jpg" alt="Moment fort 4">
                         <div class="gallery-overlay">
                             <h5>Édition 2025</h5>
                         </div>
                     </div>
-
                     <div class="gallery-item">
                         <img src="https://i.postimg.cc/JzNzDVdM/WUL-7656.jpg" alt="Moment fort 5">
                         <div class="gallery-overlay">
                             <h5>Édition 2025</h5>
                         </div>
                     </div>
-
                     <div class="gallery-item">
                         <img src="https://i.postimg.cc/fySwM694/WUL-7657.jpg" alt="Moment fort 6">
                         <div class="gallery-overlay">
                             <h5>Édition 2025</h5>
                         </div>
                     </div>
-
                     <div class="gallery-item">
                         <img src="img/prince.jpg" alt="Moment fort 7">
                         <div class="gallery-overlay">
                             <h5>Édition 2025</h5>
                         </div>
                     </div>
-
                     <div class="gallery-item">
                         <img src="img/israel.jpg" alt="Moment fort 8">
                         <div class="gallery-overlay">
@@ -478,12 +433,10 @@
 
                 <div class="mt-5">
                     <p>Pour voir toutes les photos de l'événement, cliquez sur le bouton ci-dessous :</p>
-                    <a href="https://drive.google.com/drive/folders/1QvHBKwzwxuK8Q2EVfA3L4x7-vngskYQz"
-                        class="btn btn-primary btn-lg" target="_blank">
+                    <a href="https://drive.google.com/drive/folders/1QvHBKwzwxuK8Q2EVfA3L4x7-vngskYQz" class="btn btn-primary btn-lg" target="_blank">
                         Voir plus d'images
                     </a>
                 </div>
-
             </div>
         </section>
 
@@ -498,62 +451,45 @@
                         <img src="https://i.postimg.cc/kXZTVLR1/images.png" alt="Partenaire Cube" class="img-fluid mb-2">
                         <h5><a href="https://www.saeicube.com/">cube saei</a></h5>
                     </div>
-
                     <div class="partner-card text-center" style="flex: 0 0 auto;">
-                        <a href="https://simelan.saeicube.com"><img src="https://i.postimg.cc/WpYnKx8N/t-l-chargement.png" alt="Partenaire Simelan"
-                            class="img-fluid mb-2"></a>
+                        <a href="https://simelan.saeicube.com"><img src="https://i.postimg.cc/WpYnKx8N/t-l-chargement.png" alt="Partenaire Simelan" class="img-fluid mb-2"></a>
                         <h5><a href="https://simelan.saeicube.com">simelan</a></h5>
                     </div>
-
                     <div class="partner-card text-center" style="flex: 0 0 auto;">
                         <img src="https://i.postimg.cc/25Ch3xG9/lacs.jpg" alt="Partenaire Lacs1" class="img-fluid mb-2">
                         <h5><a href="">lacs1</a></h5>
                     </div>
-
                     <div class="partner-card text-center" style="flex: 0 0 auto;">
-                        <img src="https://i.postimg.cc/q7QnKCZJ/logo-edenia.png" alt="Partenaire Flash"
-                            class="img-fluid mb-2">
+                        <img src="https://i.postimg.cc/q7QnKCZJ/logo-edenia.png" alt="Partenaire Flash" class="img-fluid mb-2">
                         <h5><a href="">edenia</a></h5>
                     </div>
-
                     <div class="partner-card text-center" style="flex: 0 0 auto;">
-                        <img src="https://i.postimg.cc/xjBs8Wzs/Logo-CUBE-TOUR-jpeg.jpg" alt="Partenaire Cube Tour"
-                            class="img-fluid mb-2">
+                        <img src="https://i.postimg.cc/xjBs8Wzs/Logo-CUBE-TOUR-jpeg.jpg" alt="Partenaire Cube Tour" class="img-fluid mb-2">
                         <h5><a href="">cube tour</a></h5>
                     </div>
-
                     <div class="partner-card text-center" style="flex: 0 0 auto;">
-                        <img src="https://i.postimg.cc/66Gbskzj/Logo-V-yi-haute-tension-1.png" alt="Partenaire Veyi"
-                            class="img-fluid mb-2">
+                        <img src="https://i.postimg.cc/66Gbskzj/Logo-V-yi-haute-tension-1.png" alt="Partenaire Veyi" class="img-fluid mb-2">
                         <h5><a href="">veyi</a></h5>
                     </div>
-
                     <div class="partner-card text-center" style="flex: 0 0 auto;">
-                        <img src="https://i.postimg.cc/vZhLrj4w/Whats-App-Image-2025-09-01-16-31-13-05433e3c.jpg"
-                            alt="Partenaire Easyfish" class="img-fluid mb-2">
+                        <img src="https://i.postimg.cc/vZhLrj4w/Whats-App-Image-2025-09-01-16-31-13-05433e3c.jpg" alt="Partenaire Easyfish" class="img-fluid mb-2">
                         <h5><a href="">easyfish</a></h5>
                     </div>
-
                     <div class="partner-card text-center" style="flex: 0 0 auto;">
-                        <img src="https://i.postimg.cc/ydtTJZkJ/Logo-E-ledji-Trans-R-B.png" alt="Partenaire Elédji Trans"
-                            class="img-fluid mb-2">
+                        <img src="https://i.postimg.cc/ydtTJZkJ/Logo-E-ledji-Trans-R-B.png" alt="Partenaire Elédji Trans" class="img-fluid mb-2">
                         <h5><a href="">elédji trans</a></h5>
                     </div>
-
                     <div class="partner-card text-center" style="flex: 0 0 auto;">
-                        <img src="https://i.postimg.cc/y8DYj3d6/1m82-x-3-6m-copie.jpg" alt="Partenaire Orovin"
-                            class="img-fluid mb-2">
+                        <img src="https://i.postimg.cc/y8DYj3d6/1m82-x-3-6m-copie.jpg" alt="Partenaire Orovin" class="img-fluid mb-2">
                         <h5><a href="">orovin</a></h5>
                     </div>
                 </div>
             </div>
         </section>
 
-
         <section class="location-section section-padding section-bg" id="localisation">
             <div class="container">
                 <div class="row">
-
                     <div class="col-12 text-center mb-4">
                         <h2>Notre Localisation</h2>
                         <p>Venez nous rencontrer ou contactez-nous pour plus d'informations</p>
@@ -563,26 +499,19 @@
                         <div class="location-info">
                             <h3>Adresse</h3>
                             <p>Aného, Togo</p>
-
                             <h3>Téléphone</h3>
                             <p><a href="tel: 0022872219330">+228 72219330</a></p>
-
                             <h3>Email</h3>
                             <p><a href="mailto:simelanafrique@gmail.com">simelanafrique@gmail.com</a></p>
                         </div>
                     </div>
 
                     <div class="col-lg-6 col-12">
-                        <div class="location-map"
-                            style="border-radius:15px; overflow:hidden; box-shadow:0 5px 20px rgba(0,0,0,0.2);">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.123456789!2d1.234567!3d6.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1060c123456789ab%3A0xcdef1234567890ab!2sLom%C3%A9!5e0!3m2!1sfr!2stg!4v1696111111111!5m2!1sfr!2stg"
-                                width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
+                        <div class="location-map" style="border-radius:15px; overflow:hidden; box-shadow:0 5px 20px rgba(0,0,0,0.2);">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.123456789!2d1.234567!3d6.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1060c123456789ab%3A0xcdef1234567890ab!2sLom%C3%A9!5e0!3m2!1sfr!2stg!4v1696111111111!5m2!1sfr!2stg" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -594,40 +523,29 @@
                         <h2 class="text-center mb-4">Contact & Newsletter</h2>
 
                         <nav class="d-flex justify-content-center mb-4">
-                            <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab"
-                                role="tablist">
-                                <button class="nav-link active" id="nav-Contact-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-Contact" type="button" role="tab" aria-controls="nav-Contact"
-                                    aria-selected="true">
+                            <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-Contact-tab" data-bs-toggle="tab" data-bs-target="#nav-Contact" type="button" role="tab" aria-controls="nav-Contact" aria-selected="true">
                                     <h5>Contact</h5>
                                 </button>
-                                <button class="nav-link" id="nav-Newsletter-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-Newsletter" type="button" role="tab"
-                                    aria-controls="nav-Newsletter" aria-selected="false">
+                                <button class="nav-link" id="nav-Newsletter-tab" data-bs-toggle="tab" data-bs-target="#nav-Newsletter" type="button" role="tab" aria-controls="nav-Newsletter" aria-selected="false">
                                     <h5>Newsletter</h5>
                                 </button>
                             </div>
                         </nav>
 
-                        <div class="tab-content shadow-lg p-4 rounded" id="nav-tabContent"
-                            style="background: rgba(255,255,255,0.8); backdrop-filter: blur(10px);">
-                            <div class="tab-pane fade show active" id="nav-Contact" role="tabpanel"
-                                aria-labelledby="nav-Contact-tab">
-                                <form class="custom-form contact-form" action="mailto:simelanafrique@gmail.com"
-                                    method="post" enctype="text/plain" role="form">
+                        <div class="tab-content shadow-lg p-4 rounded" id="nav-tabContent" style="background: rgba(255,255,255,0.8); backdrop-filter: blur(10px);">
+                            <div class="tab-pane fade show active" id="nav-Contact" role="tabpanel" aria-labelledby="nav-Contact-tab">
+                                <form class="custom-form contact-form" action="mailto:simelanafrique@gmail.com" method="post" enctype="text/plain" role="form">
                                     <div class="contact-form-body">
                                         <div class="row mb-3">
                                             <div class="col-lg-6 col-md-6 col-12 mb-2">
-                                                <input type="text" name="Nom" class="form-control"
-                                                    placeholder="Nom complet" required>
+                                                <input type="text" name="Nom" class="form-control" placeholder="Nom complet" required>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-12 mb-2">
-                                                <input type="email" name="Email" class="form-control"
-                                                    placeholder="Email" required>
+                                                <input type="email" name="Email" class="form-control" placeholder="Email" required>
                                             </div>
                                         </div>
-                                        <textarea name="Message" rows="4" class="form-control mb-3"
-                                            placeholder="Message"></textarea>
+                                        <textarea name="Message" rows="4" class="form-control mb-3" placeholder="Message"></textarea>
                                         <div class="text-center">
                                             <button type="submit" class="btn btn-primary px-4">Envoyer</button>
                                         </div>
@@ -635,14 +553,12 @@
                                 </form>
                             </div>
 
-                            <div class="tab-pane fade" id="nav-Newsletter" role="tabpanel"
-                                aria-labelledby="nav-Newsletter-tab">
+                            <div class="tab-pane fade" id="nav-Newsletter" role="tabpanel" aria-labelledby="nav-Newsletter-tab">
                                 <form class="newsletter-form text-center" id="newsletterForm">
                                     <p>Inscrivez-vous à notre newsletter pour recevoir les dernières nouvelles !</p>
                                     <div class="row justify-content-center">
                                         <div class="col-lg-6 col-md-8 col-12 mb-2">
-                                            <input type="email" name="Email" class="form-control"
-                                                placeholder="Votre email" required>
+                                            <input type="email" name="Email" class="form-control" placeholder="Votre email" required>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary px-4">S'abonner</button>
@@ -666,17 +582,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
-                        <img src="https://i.postimg.cc/PqDNMvxs/Letcha-Doutcha-Logo-sans-fond-2.png"
-                            alt="Letcha Doutcha Logo" style="width: 150px; height: auto;">
                         <div class="footer-glass text-center text-lg-start mt-3">
                             <h2>LETCHA DOUTCHA 2025</h2>
                             <p>Découvrez nos moments inoubliables et nos partenaires de confiance.</p>
                             <div class="social-icon">
                                 <a href="https://chat.whatsapp.com/CJmhgUVuuzOIDyMDg6crdF?mode=ems_wa_c">Whatsapp</a>
                                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:7368026636924903425">LinkedIn</a>
-
-                                <a
-                                    href="https://www.facebook.com/100080343682863/posts/pfbid031SjsvL1PStxrvsMEGzyYYcL8scnQ9C8eskMcwe3eaaZaze3VHLLoBhGhnDoM7Vpol/?app=fbl">Facebook</a>
+                                <a href="https://www.facebook.com/100080343682863/posts/pfbid031SjsvL1PStxrvsMEGzyYYcL8scnQ9C8eskMcwe3eaaZaze3VHLLoBhGhnDoM7Vpol/?app=fbl">Facebook</a>
                             </div>
                         </div>
                     </div>
@@ -698,9 +610,8 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="footer-glass text-center text-lg-start">
                             <h5>Contact</h5>
-                            <p><a href="tel:+228 70 76 76 94">+228 70 76 76 94</a></p>
-                            <p><a href="tel:+228 97 95 44 76">+228 97 95 44 76</a></p>
-
+                            <p><a href="tel:+228 70 76 76 94">+228 70 76 76 94</a></p>
+                            <p><a href="tel:+228 97 95 44 76">+228 97 95 44 76</a></p>
                             <p><a href="mailto:simelanafrique@gmail.com">simelanafrique@gmail.com</a></p>
                             <h5>Localisation</h5>
                             <p>Aného , Togo</p>
@@ -710,10 +621,7 @@
                 </div>
 
                 <div class="site-footer-bottom mt-3">
-                    <p>© 2025 Letcha Doutcha. Tous droits réservés. |<a href="conditions.html" target="_blank">Conditions
-                            d’utilisation</a>
-                        | <a href="politiquedeconfientialite.html">Politique de confidentialité</a> | <a href="">Vos
-                            retours</a> </p>
+                    <p>© 2025 Letcha Doutcha. Tous droits réservés. |<a href="conditions.html" target="_blank">Conditions d’utilisation</a> | <a href="politiquedeconfientialite.html">Politique de confidentialité</a> | <a href="">Vos retours</a> </p>
                 </div>
             </div>
         </footer>
